@@ -1,0 +1,169 @@
+%%% The main file. It contains definitions of basic parameters and includes all other parts.
+
+% Meta-data of your thesis (please edit)
+\input metadata.tex
+
+% Generate metadata in XMP format for use by the pdfx package
+\input xmp.tex
+
+%% Settings for single-side (simplex) printing
+% Margins: left 40mm, right 25mm, top and bottom 25mm
+% (but beware, LaTeX adds 1in implicitly)
+\documentclass[12pt,a4paper]{report}
+\setlength\textwidth{145mm}
+\setlength\textheight{247mm}
+\setlength\oddsidemargin{15mm}
+\setlength\evensidemargin{15mm}
+\setlength\topmargin{0mm}
+\setlength\headsep{0mm}
+\setlength\headheight{0mm}
+% \openright makes the following text appear on a right-hand page
+\let\openright=\clearpage
+
+%% Settings for two-sided (duplex) printing
+% \documentclass[12pt,a4paper,twoside,openright]{report}
+% \setlength\textwidth{145mm}
+% \setlength\textheight{247mm}
+% \setlength\oddsidemargin{14.2mm}
+% \setlength\evensidemargin{0mm}
+% \setlength\topmargin{0mm}
+% \setlength\headsep{0mm}
+% \setlength\headheight{0mm}
+% \let\openright=\cleardoublepage
+
+%% If the thesis has no printed version, symmetric margins look better
+% \documentclass[12pt,a4paper]{report}
+% \setlength\textwidth{145mm}
+% \setlength\textheight{247mm}
+% \setlength\oddsidemargin{10mm}
+% \setlength\evensidemargin{10mm}
+% \setlength\topmargin{0mm}
+% \setlength\headsep{0mm}
+% \setlength\headheight{0mm}
+% \let\openright=\clearpage
+
+%% Generate PDF/A-2u
+\usepackage[a-2u]{pdfx}
+
+%% Prefer Latin Modern fonts
+\usepackage{lmodern}
+% If we are not using LuaTeX, we need to set up character encoding:
+\usepackage{iftex}
+\ifpdftex
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\fi
+
+%% Further useful packages (included in most LaTeX distributions)
+\usepackage{amsmath}        % extensions for typesetting of math
+\usepackage{amsfonts}       % math fonts
+\usepackage{amsthm}         % theorems, definitions, etc.
+\usepackage{bm}             % boldface symbols (\bm)
+\usepackage{booktabs}       % improved horizontal lines in tables
+\usepackage{caption}        % custom captions of floating objects
+\usepackage{dcolumn}        % improved alignment of table columns
+\usepackage{floatrow}       % custom float environments
+\usepackage{graphicx}       % embedding of pictures
+\usepackage{indentfirst}    % indent the first paragraph of a chapter
+\usepackage[nopatch=item]{microtype}   % micro-typographic refinement
+\usepackage{paralist}       % improved enumerate and itemize
+\usepackage[nottoc]{tocbibind} % makes sure that bibliography and the lists
+			    % of figures/tables are included in the table
+			    % of contents
+\usepackage{xcolor}         % typesetting in color
+
+% The hyperref package for clickable links in PDF and also for storing
+% metadata to PDF (including the table of contents).
+% Most settings are pre-set by the pdfx package.
+\hypersetup{unicode}
+\hypersetup{breaklinks=true}
+
+% Packages for computer science theses
+\usepackage{algpseudocode}  % part of algorithmicx package
+\usepackage{algorithm}
+\usepackage{fancyvrb}       % improved verbatim environment
+\usepackage{listings}       % pretty-printer of source code
+
+% You might want to use cleveref for references
+% \usepackage{cleveref}
+
+% Set up formatting of bibliography (references to literature)
+% Details can be adjusted in macros.tex.
+%
+% BEWARE: Different fields of research and different university departments
+% have their own customs regarding bibliography. Consult the bibliography
+% format with your supervisor.
+%
+% The basic format according to the ISO 690 standard with numbered references
+\usepackage[natbib,style=iso-numeric,sorting=none]{biblatex}
+% ISO 690 with alphanumeric references (abbreviations of authors' names)
+%\usepackage[natbib,style=iso-alphabetic]{biblatex}
+% ISO 690 with references Author (year)
+%\usepackage[natbib,style=iso-authoryear]{biblatex}
+%
+% Some fields of research prefer a simple format with numbered references
+% (sorting=none tells that bibliography should be listed in citation order)
+%\usepackage[natbib,style=numeric,sorting=none]{biblatex}
+% Numbered references, but [1,2,3,4,5] is compressed to [1-5]
+%\usepackage[natbib,style=numeric-comp,sorting=none]{biblatex}
+% A simple format with alphanumeric references:
+%\usepackage[natbib,style=alphabetic]{biblatex}
+
+% Load the file with bibliography entries
+\addbibresource{bibliography.bib}
+
+% Our definitions of macros (see description inside)
+\input macros.tex
+
+%%% Title page and various mandatory informational pages
+\begin{document}
+\include{title}
+
+%%% A page with automatically generated table of contents of the thesis
+
+\tableofcontents
+
+%%% Each chapter is kept in a separate file
+\include{preface}
+\include{chap01}
+\include{chap02}
+\include{chap03}
+
+\include{epilog}
+
+%%% Bibliography
+\include{bibliography}
+
+%%% Figures used in the thesis (consider if this is needed)
+\listoffigures
+
+%%% Tables used in the thesis (consider if this is needed)
+%%% In mathematical theses, it could be better to move the list of tables to the beginning of the thesis.
+\listoftables
+
+%%% Abbreviations used in the thesis, if any, including their explanation
+%%% In mathematical theses, it could be better to move the list of abbreviations to the beginning of the thesis.
+\chapwithtoc{List of Abbreviations}
+
+%%% Doctoral theses must contain a list of author's publications
+\ifx\ThesisType\TypePhD
+\chapwithtoc{List of Publications}
+\fi
+
+%%% Attachments to the thesis, if any. Each attachment must be referred to
+%%% at least once from the text of the thesis. Attachments are numbered.
+%%%
+%%% The printed version should preferably contain attachments, which can be
+%%% read (additional tables and charts, supplementary text, examples of
+%%% program output, etc.). The electronic version is more suited for attachments
+%%% which will likely be used in an electronic form rather than read (program
+%%% source code, data files, interactive charts, etc.). Electronic attachments
+%%% should be uploaded to SIS. Allowed file formats are specified in provision
+%%% of the rector no. 72/2017. Exceptions can be approved by faculty's coordinator.
+\appendix
+\chapter{Attachments}
+
+\section{First Attachment}
+
+\end{document}

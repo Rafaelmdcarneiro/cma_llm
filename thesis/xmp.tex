@@ -1,0 +1,32 @@
+% Generate XMP metadata file (*.xmpdata) from thesis metadata
+% The format of the xmpdata file is described in the documentation
+% of the "pdfx" LaTeX package.
+
+{
+% Define \percenthack macro that expands to a literal "%" character.
+% (We can use neither \char\`% nor \% as they are interpreted by TeX's
+% main processor which is too late for our purposes.)
+\catcode`\%=12
+\global\edef\percenthack{%}
+}
+
+{
+% Override some macros
+\def\xxx#1{#1}
+\def\sep{\string\sep\space}
+\let~=\space
+
+% Generate *.xmpdata
+% It is tempting to use LaTeX's filecontents environment, but it does not
+% expand macros. We need to dive deeper...
+\newwrite\xmp
+\immediate\openout\xmp=\jobname.xmpdata
+\immediate\write\xmp{\percenthack\space Generated automatically from metadata.tex, please don't edit here.}
+\def\xmpitem#1#2{\immediate\write\xmp{\string#1{#2}}}
+\xmpitem\Author\ThesisAuthorXMP
+\xmpitem\Title\ThesisTitleXMP
+\xmpitem\Keywords\ThesisKeywordsXMP
+\xmpitem\Subject\AbstractXMP
+\xmpitem\Publisher{Charles University}
+\immediate\closeout\xmp
+}

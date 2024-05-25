@@ -1,0 +1,49 @@
+%%% A template of a stand-alone abstract in Czech
+
+% Meta-data of your thesis (please edit)
+\input metadata.tex
+
+% Generate metadata in XMP format for use by the pdfx package
+\let\OrigThesisTitleXMP=\ThesisTitleXMP
+\def\ThesisTitleXMP{\OrigThesisTitleXMP\space (abstrakt)}
+\def\AbstractXMP{}
+\def\ThesisKeywordsXMP{}
+\input xmp.tex
+
+\documentclass[12pt]{report}
+
+\usepackage[a4paper, hmargin=1in, vmargin=1in]{geometry}
+\usepackage[a-2u]{pdfx}
+\usepackage[czech]{babel}
+\usepackage{iftex}
+\ifpdftex
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\fi
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{fancyvrb}
+
+\pagenumbering{gobble}
+
+% Definitions of macros (see description inside)
+\input macros.tex
+
+\begin{document}
+
+\ifx\StudyLanguage\LangCS
+
+% By default, we create the abstract from the metadata
+\AbstractCS
+
+\else
+
+Students of English study programmes do not submit a~Czech version
+of the abstract.
+
+\fi
+
+\end{document}

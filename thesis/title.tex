@@ -1,0 +1,183 @@
+%%% Title page of the thesis and other mandatory pages
+
+%%% Inscriptions at the opening page of the hard cover
+
+% We usually do not typeset the hard cover, but if you want to do it, change \iffalse to \iftrue
+\iffalse
+
+\pagestyle{empty}
+\hypersetup{pageanchor=false}
+\begin{center}
+
+\large
+Charles University
+
+\medskip
+
+Faculty of Mathematics and Physics
+
+\vfill
+
+{\huge\bf\ThesisTypeTitle}
+
+\vfill
+
+{\huge\bf\ThesisTitle\par}
+
+\vfill
+\vfill
+
+\hbox to \hsize{\YearSubmitted\hfil \ThesisAuthor}
+
+\end{center}
+
+\newpage\openright
+\setcounter{page}{1}
+
+\fi
+
+%%% Title page of the thesis
+
+\pagestyle{empty}
+\hypersetup{pageanchor=false}
+\begin{center}
+
+\centerline{\mbox{\includegraphics[width=166mm]{img/logo-en.pdf}}}
+
+\vspace{-8mm}
+\vfill
+
+{\bf\Large\ThesisTypeTitle}
+
+\vfill
+
+{\LARGE\ThesisAuthor}
+
+\vspace{15mm}
+
+{\LARGE\bfseries\ThesisTitle\par}
+
+\vfill
+
+\Department
+
+\vfill
+
+{
+\centerline{\vbox{\halign{\hbox to 0.45\hsize{\hfil #}&\hskip 0.5em\parbox[t]{0.45\hsize}{\raggedright #}\cr
+Supervisor of the \ThesisTypeName{} thesis:&\Supervisor \cr
+\ifx\ThesisType\TypeRig\else
+\noalign{\vspace{2mm}}
+Study programme:&\StudyProgramme \cr
+\fi
+}}}}
+
+\vfill
+
+Prague \YearSubmitted
+
+\end{center}
+
+\newpage
+
+%%% A page with a solemn declaration to the thesis
+
+\openright
+\hypersetup{pageanchor=true}
+\vglue 0pt plus 1fill
+
+\noindent
+I declare that I carried out this \ThesisTypeName{} thesis on my own, and only with the cited
+sources, literature and other professional sources.
+I understand that my work relates to the rights and obligations under the Act No.~121/2000 Sb.,
+the Copyright Act, as amended, in particular the fact that the Charles
+University has the right to conclude a license agreement on the use of this
+work as a school work pursuant to Section 60 subsection 1 of the Copyright~Act.
+
+\vspace{10mm}
+
+\hbox{\hbox to 0.5\hsize{%
+In \hbox to 6em{\dotfill} date \hbox to 6em{\dotfill}
+\hss}\hbox to 0.5\hsize{\dotfill\quad}}
+\smallskip
+\hbox{\hbox to 0.5\hsize{}\hbox to 0.5\hsize{\hfil Author's signature\hfil}}
+
+\vspace{20mm}
+\newpage
+
+%%% Dedication
+
+\openright
+
+\noindent
+\Dedication
+
+\newpage
+
+%%% Mandatory information page of the thesis
+
+\openright
+{\InfoPageFont
+
+\vtop to 0.5\vsize{
+\setlength\parindent{0mm}
+\setlength\parskip{5mm}
+
+Title:
+\ThesisTitle
+
+Author:
+\ThesisAuthor
+
+\DeptType:
+\Department
+
+Supervisor:
+\Supervisor, \SupervisorsDepartment
+
+Abstract:
+\Abstract
+
+Keywords:
+{\def\sep{\unskip, }\ThesisKeywords}
+
+\vfil
+}
+
+% In Czech study programmes, it is mandatory to include Czech meta-data:
+
+\ifx\StudyLanguage\LangCS
+
+\vtop to 0.49\vsize{
+\setlength\parindent{0mm}
+\setlength\parskip{5mm}
+
+Název práce:
+\ThesisTitleCS
+
+Autor:
+\ThesisAuthor
+
+\DeptTypeCS:
+\DepartmentCS
+
+Vedoucí bakalářské práce:
+\Supervisor, \SupervisorsDepartmentCS
+
+Abstrakt:
+\AbstractCS
+
+Klíčová slova:
+{\def\sep{\unskip, }\ThesisKeywordsCS}
+
+\vfil
+}
+
+\fi
+
+}
+
+\newpage
+
+%%% Further pages will be numbered
+\pagestyle{plain}

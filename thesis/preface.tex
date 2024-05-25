@@ -1,0 +1,78 @@
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+
+When a team is working on any project, it is beneficial to unify the language and define the terms 
+that everyone will use. This is addressed by creating conceptual models. In a nutshell, conceptual 
+models capture entities, their attributes and relationships. However, creating these conceptual 
+models takes a non-trivial amount of time. \\
+
+There has been a lot of recent progress in the development of Large Language Models (LLMs) such 
+as ChatGPT. We hypothesize that these LLMs could be used in such a way as to make it easier for 
+users to create conceptual models. We know that current LLMs are not smart enough to directly 
+create the conceptual model one expects for a given textual description (TODO: Citation). However, one possible solution is to use an LLM as an assistant, which we see around us a lot today (e.g. Copilot). \\
+
+
+Aim of this thesis is to create this aforementioned LLM assistant. This assistant is intended to help users to make conceptual models faster and also to help the users to better describe these newly created conceptual models. \\
+
+
+\section*{Possible approaches}
+
+- TODO: What are the main approaches to automate creating of conceptual models? (probably rule-based and machine learning)
+- how does rule based approaches work? \\
+
+- TODO: read related work from "Automated Domain Modeling with Large Language Models: A Comparative Study"
+
+
+- TODO: read related work from "On the assessment of generative AI in modeling tasks an experience report with ChatGPT and UML"
+
+
+\section*{Related work}
+
+\begin{itemize}
+\item user directly asks some LLM to generate a conceptual model and then the writes following prompts to improve the generated conceptual model (On the assessment of generative AI in modeling tasks an experience report with ChatGPT and UML)
+
+\item fully automated from domain description as input without user interaction create a conceptual model (Automated Domain Modeling with Large Language Models: A Comparative Study)
+\end{itemize}
+
+
+\section*{Thesis structure}
+
+
+\section*{Approaches to creating LLM assistant}
+
+\subsection*{Training own LLM}
+- cons: requires a ton of resources: money, time, data
+
+
+\subsection*{Fine-tuning existing LLM}
+- cons: requires a lot of data
+
+
+\subsection*{Prompt engineering of existing LLM}
+- pros: doesn't require that much resources
+
+
+\section*{Selected approach}
+
+- definition of our problems (entities, attributes and relationships extraction) \\
+- (when extracting entities first LLM needs to locate the entity in the text) \\
+
+\section*{How to achieve better results with using an existing LLM}
+- RAG (provide LLM only the part of domain description that contains the wanted info) \\
+- advanced prompt engineering techniques (CoT, ToT, few-shot prompting) \\
+
+
+\section*{Data}
+
+- which data we use for testing
+- data requirements (domain description requirements)
+
+
+\section*{Prompt engineering}
+- subsections: CoT, ToT, few-shot prompting \\
+- CoT can be further divided into more approaches
+
+
+\section*{RAG methods}
+- TODO: brief explanation of what RAG is, how it works and why it works \\
+- RAG approaches: semantic vs. syntactic (more in GAO, Yunfan, et al. Retrieval-augmented generation for large language models: A survey.) \\
