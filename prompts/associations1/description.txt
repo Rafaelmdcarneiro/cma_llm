@@ -1,0 +1,1 @@
+Generate description for the association: "{association_name}" of the class: "{source_class}" in exactly this JSON object: {"description": ""}.

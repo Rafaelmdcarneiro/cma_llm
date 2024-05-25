@@ -1,0 +1,69 @@
+Solely based on the given context which associations does the class: "{source_class}" have?
+
+For each association output its name and source class and target class and copy the part of the given context containing this association in JSON object like this: {"originalText": "copy the part of the given context containing this association", "name": "association name", "source": "source class name", "target": "target class name"}
+
+
+EXAMPLE START
+
+Solely based on the given context which associations does the class: "employee" have?
+
+This is the given context:
+"In this company, every employee, whether works in accounting, marketing, or any other department with some other title, has a specific role. An employee has a personal number, that uniquely identifies the employee and name the other employees in the company use to address the employee. Each one works in just one department, which is a part of how the company organizes its work. Some employees are also managers; they still do much of what other employees do, but they also have extra responsibilities depending on their level in the company hierarchy."
+
+Output:
+context: employee, whether works in accounting, marketing, or any other department with some other title ... Each one works in just one department, which is a part of how the company organizes its work.
+name: works in
+source class: employee
+target class: department
+JSON object: {"originalText": "employee, whether works in accounting, marketing, or any other department with some other title ... Each one works in just one department, which is a part of how the company organizes its work.", "name": "works in", "source": "employee", "target": "department"}
+
+EXAMPLE END
+
+
+EXAMPLE START
+
+Solely based on the given context which associations does the class: "department" have?
+
+This is the given context:
+"In this company, every employee, whether works in accounting, marketing, or any other department with some other title, has a specific role. An employee has a personal number, that uniquely identifies the employee and name the other employees in the company use to address the employee. For a remote contact, a contact email is essential. Each one works in just one department, which is a part of how the company organizes its work."
+
+Output:
+context: employee, whether works in accounting, marketing, or any other department with some other title ... Each one works in just one department, which is a part of how the company organizes its work.
+name: works in
+source class: employee
+target class: department
+JSON object: {"originalText": "employee, whether works in accounting, marketing, or any other department with some other title ... Each one works in just one department, which is a part of how the company organizes its work.", "name": "works in", "source": "employee", "target": "department"}
+
+context: make sure the departments they manage are productive
+name: manages
+source class: manager
+target class: department
+JSON object: {"originalText": "make sure the departments they manage are productive", "name": "manages", "source": "manager", "target": "department"}
+
+EXAMPLE END
+
+
+EXAMPLE START
+
+Solely based on the given context which associations does the class: "manager" have?
+
+This is the given context:
+"Managers help keep things running smoothly and make sure the departments they manage are productive."
+
+Output:
+context: make sure the departments they manage are productive
+name: manages
+source class: manager
+target class: department
+JSON object: {"originalText": "make sure the departments they manage are productive", "name": "manages", "source": "manager", "target": "department"}
+
+EXAMPLE END
+
+
+Solely based on the given context which associations does the class: "{source_class}" have?
+
+This is the given context:
+"{domain_description}"
+
+Output:
+context:

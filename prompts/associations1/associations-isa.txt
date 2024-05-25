@@ -1,0 +1,2 @@
+Which is-a associations does the class: "{source_class}" have? Output exactly {count_items} associations in JSON format like this:
+{"description": "description of the is-a association", "name": "association name", "source": "source class name", "target": "target class name"}

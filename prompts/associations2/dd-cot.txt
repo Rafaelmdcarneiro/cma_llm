@@ -1,0 +1,47 @@
+Solely based on the given context which associations are explicitly between the source class "{source_class}" and the target class "{target_class}"?
+
+For each association copy the part of the given context containing this association and output its name in JSON object like this:
+{"originalText": "copy the part of the given context containing this association", "name": "association name", "source": "{source_class}", "target": "{target_class}"}
+
+
+EXAMPLE START
+
+Solely based on the given context which associations are explicitly between the source class "employee" and the target class "department"?
+
+This is the given context:
+"In this company, every employee, whether works in accounting, marketing, or any other department with some other title, has a specific role. An employee has a personal number, that uniquely identifies the employee and name the other employees in the company use to address the employee. For a remote contact, a contact email is essential. Each one works in just one department, which is a part of how the company organizes its work."
+
+Output:
+context: employee, whether works in accounting, marketing, or any other department with some other title ... Each one works in just one department, which is a part of how the company organizes its work.
+name: works in
+source class: employee
+target class: department
+JSON object: {"originalText": "employee, whether works in accounting, marketing, or any other department with some other title ... Each one works in just one department, which is a part of how the company organizes its work.", "name": "works in", "source": "employee", "target": "department"}
+
+EXAMPLE END
+
+
+EXAMPLE START
+
+Solely based on the given context which associations are explicitly between the source class "manager" and the target class "department"?
+
+This is the given context:
+"Managers help keep things running smoothly and make sure the departments they manage are productive."
+
+Output:
+context: make sure the departments they manage are productive
+name: manages
+source class: manager
+target class: department
+JSON object: {"originalText": "make sure the departments they manage are productive", "name": "manages", "source": "manager", "target": "department"}
+
+EXAMPLE END
+
+
+Solely based on the given context which associations are explicitly between the source class "{source_class}" and the target class "{target_class}"?
+
+This is the given context:
+"{domain_description}"
+
+Output:
+context:

@@ -1,0 +1,1 @@
+Generate cardinality for the attribute: "{attribute_name}" of the class: "{source_class}" and output it in exactly this JSON object: {"sourceCardinality": ""}. The cardinality should be one of this elements: ["one", "optional-one", "many"]. If you are not certain which cardinality to choose output exactly this JSON object: {"sourceCardinality": ""}

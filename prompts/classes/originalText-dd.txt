@@ -1,0 +1,5 @@
+Solely based on the given context copy the part of the given context containing the class: "{source_class}" and output it in this JSON object:
+{"originalText": ""}.
+
+This is the given context:
+"{domain_description}"

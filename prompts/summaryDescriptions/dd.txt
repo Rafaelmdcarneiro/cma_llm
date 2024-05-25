@@ -1,0 +1,13 @@
+Solely based on the given context generate description only for the given classes, attributes and associations in JSON format like this:
+{"class": "", "description": "", "attributes": [{"name": "", "description": ""}]}
+{"association": "", "sourceClass": "", "targetClass": "", "description": ""}
+
+Make sure to only generate the descriptions for the given clases, attributes and associations.
+
+These are the given classes, attributes and associations:
+"{conceptual_model}"
+
+This is the given context:
+"{domain_description}"
+
+This is the output in the specified JSON format:

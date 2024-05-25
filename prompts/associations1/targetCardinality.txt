@@ -1,0 +1,2 @@
+Generate target cardinality for the association: "{association_name}" of the source class: "{source_class}" and the target class "{target_class}" and output it in exactly this JSON object: {"targetCardinality": ""}.
+The cardinality must be one of these: ["one", "optional-one", "many"]. If you are not certain which cardinality to choose output exactly this JSON object: {"targetCardinality": ""}

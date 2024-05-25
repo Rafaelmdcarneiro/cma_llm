@@ -1,0 +1,26 @@
+Solely based on the given context extract all class names for a UML diagram.
+
+Output each class name in JSON object like this: {"name": "class name"}.
+
+
+EXAMPLE START
+
+Solely based on the given context extract all class names for a UML diagram.
+
+This is the given context:
+"In this company, every employee, whether works in accounting, marketing, or any other department with some other title, has a specific role. An employee has a personal number, that uniquely identifies the employee and name the other employees in the company use to address the employee. For a remote contact, a contact email is essential. Each one works in just one department, which is a part of how the company organizes its work. Some employees are also managers; they still do much of what other employees do, but they also have extra responsibilities depending on their level in the company hierarchy. Managers help keep things running smoothly and make sure the departments they manage are productive. This simple setup helps everyone know who's doing what and where they fit in the larger picture of the company."
+
+Output:
+{"name": "employee"}
+{"name": "department"}
+{"name": "manager"}
+
+EXAMPLE END
+
+
+Solely based on the given context extract all class names for a UML diagram.
+
+This is the given context:
+"{domain_description}"
+
+Output:

@@ -1,0 +1,6 @@
+Solely based on the given context provide description for the attribute: "{attribute_name}" of the class: "{source_class}" and output it in this JSON object:
+{"description": ""}.
+
+		
+This is the given context:
+"{domain_description}"

@@ -1,0 +1,7 @@
+Solely based on the following context which is-a associations does the class: "{source_class}" have?
+
+First output all possible is-a associations for the class "{source_class}". Then output only those is-a associations which you are certain about in JSON format like this:
+{"originalText": "copy the part of the given context containing this is-a relationship", "name": "relationship name", "source": "source class name", "target": "target class name"}.'
+
+This is the given context:
+"{domain_description}"

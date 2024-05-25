@@ -1,0 +1,6 @@
+Solely based on the given context provide description for the association: "{association_name}" of the source class: "{source_class}" and the target class: "{target_class}" and output this description in this JSON object:
+{"description": ""}.
+
+		
+This is the given context:
+"{domain_description}"

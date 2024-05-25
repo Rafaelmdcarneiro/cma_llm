@@ -1,0 +1,40 @@
+Solely based on the given context which attributes does the class: "{source_class}" have?
+
+Output each attribute in JSON object like this: {"originalText": "copy the part of the given context containing this attribute", "name": "attribute name"}.
+
+
+EXAMPLE START
+
+Solely based on the given context which attributes does the class: "employee" have?
+
+This is the given context:
+"In this company, every employee, whether works in accounting, marketing, or any other department with some other title, has a specific role. An employee has a personal number, that uniquely identifies the employee and name the other employees in the company use to address the employee. For a remote contact, a contact email is essential."
+
+Output:
+{"originalText": "has a specific role", "name": "role"}
+{"originalText": "personal number, that uniquely identifies the employee", "name": "personal number"}
+{"originalText": "name the other employees in the company use to address the employee", "name": "name"}
+{"originalText": "For a remote contact, a contact email", "name": "contact email"}
+
+EXAMPLE END
+
+
+EXAMPLE START
+
+Solely based on the given context which attributes does the class: "department" have?
+
+This is the given context:
+"In this company, every employee, whether works in accounting, marketing, or any other department with some other title, has a specific role."
+
+Output:
+{"originalText": "department with some other title", "name": "title"}
+
+EXAMPLE END
+
+
+Solely based on the given context which attributes does the class: "{source_class}" have?
+
+This is the given context:
+"{domain_description}"
+
+Output:

@@ -1,0 +1,2 @@
+Solely based on the given context provide source cardinality for the association: "{association_name}" of the source class: "{source_class}" and the target class "{target_class}" and output it in exactly this JSON object: {"sourceCardinality": ""}.
+The cardinality should be one of these: ["one", "optional-one", "many"]. If you are not certain which cardinality to choose output exactly this JSON object: {"sourceCardinality": ""}
