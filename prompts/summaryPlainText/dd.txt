@@ -1,0 +1,7 @@
+Solely based on the given conceptual model detaily summarize each given class, attribute and association and output the whole result in this JSON object:
+{"summary": "plain text summary of the given conceptual model"}
+
+This is the given conceptual model:
+"{conceptual_model}"
+
+Output:
